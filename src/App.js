@@ -7,6 +7,7 @@ import Menu from './Menu';
 import Services from './Services' ;
 import User from './User' ;
 import Search from './Search' ;
+import Error from './Error';
 
 export default function App() {
   return (
@@ -14,11 +15,12 @@ export default function App() {
     <Menu/>
 <Switch>
 <Route exact path='/' component={About} />
-<Route path='/contact' component={Contact} />
-<Route path='/services' component={Services} />
+<Route exact path='/contact' component={Contact} />
+<Route exact path='/services' component={Services} />
 <Route exact path='/user' component={User} />
 <Route path='/user/:name' component={User} />
-<Route path='/search' component={Search} />
+<Route exact path='/search' component={Search} />
+<Route component={Error} />
 </Switch>
     </>
   );
